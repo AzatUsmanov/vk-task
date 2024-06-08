@@ -1,6 +1,6 @@
 package pet.projects.vktask.tool.exception;
 
-public class ClientAlreadyRegisteredException extends RuntimeException {
+public class ClientAlreadyRegisteredException extends Exception {
 
     public ClientAlreadyRegisteredException() {
     }

@@ -20,7 +20,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public void registerClient(Client client) {
+    public void registerClient(Client client) throws ClientAlreadyRegisteredException {
         final var password = client.getPassword();
         final var encryptedPassword = passwordEncoder.encode(password);
         final var username = client.getUsername();

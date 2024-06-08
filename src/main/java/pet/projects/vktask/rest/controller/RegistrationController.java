@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pet.projects.vktask.dto.Client;
 import pet.projects.vktask.service.RegistrationService;
+import pet.projects.vktask.tool.exception.ClientAlreadyRegisteredException;
 
 @RestController
 @AllArgsConstructor
@@ -19,7 +20,7 @@ public class RegistrationController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/registration")
-    public void registerClient(@RequestBody Client client) {
+    public void registerClient(@RequestBody Client client) throws ClientAlreadyRegisteredException {
         registrationService.registerClient(client);
     }
 
